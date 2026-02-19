@@ -4,6 +4,9 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, Con
 
 TOKEN = os.getenv("BOT_TOKEN")
 
+if not TOKEN:
+    raise ValueError("BOT_TOKEN is not set in environment variables")
+
 keyboard = [
     ["📌 О хабе", "📅 Мероприятия"],
     ["🧑‍💻 Резидентство", "📞 Контакты"],
